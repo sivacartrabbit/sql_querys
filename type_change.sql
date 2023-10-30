@@ -1,11 +1,9 @@
--- Change the type of the 'biography' column to TEXT (when no data is there)
-ALTER TABLE "Profile"
-ALTER COLUMN "biography" TYPE TEXT;
+--INTEGER to TEXT
+prisma can convert int to text during migration without data lose (we no need to do anything in migration file)
+ALTER TABLE "User" ALTER COLUMN "phone" SET DATA TYPE TEXT;
 
-
-
--- text to Int
-
+================================================================================================================================================
+-- TEXT to INTEGER
 -- Step 1: Add a new column "new_phone" with the INTEGER data type
 ALTER TABLE "User" ADD COLUMN "new_phone" INTEGER;
 
@@ -19,3 +17,5 @@ ALTER TABLE "User" DROP COLUMN "phone";
 
 -- Step 4: Rename the "new_phone" column to "phone"
 ALTER TABLE "User" RENAME COLUMN "new_phone" TO "phone";
+
+================================================================================================================================================
