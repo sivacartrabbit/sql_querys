@@ -1,8 +1,17 @@
---INTEGER to TEXT
+
+-- INTEGER to TEXT
 prisma can convert int to text during migration without data lose (we no need to do anything in migration file)
 ALTER TABLE "User" ALTER COLUMN "phone" SET DATA TYPE TEXT;
 
 ================================================================================================================================================
+  
+-- INTEGER to BIGINT 
+  no need to do anything like int to text
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "phone" SET DATA TYPE BIGINT;
+
+================================================================================================================================================
+  
 -- TEXT to INTEGER
 -- Step 1: Add a new column "new_phone" with the INTEGER data type
 ALTER TABLE "User" ADD COLUMN "new_phone" INTEGER;
