@@ -17,5 +17,3 @@ ALTER TABLE "User" DROP COLUMN "phone";
 
 -- Step 4: Rename the "new_phone" column to "phone"
 ALTER TABLE "User" RENAME COLUMN "new_phone" TO "phone";
-
-================================================================================================================================================
